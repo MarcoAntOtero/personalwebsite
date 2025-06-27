@@ -15,8 +15,10 @@ body {
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: space-between;
-	margin-right:80px;
-	margin-left:80px;
+	width: 100%;
+	max-width: 1600px; /* Limits the maximum width */
+	min-width: 50px;  /* Ensures it doesn't shrink too small */
+	margin: 0 auto;    /* Centers the container */
 }
 /* ==========================================
    TYPOGRAPHY
@@ -46,7 +48,7 @@ h2{ /*affects subtitles of main, bottom containers*/
 }
 .project1-title, .project2-title , .project3-title{
 	font-weight: 300;
-	font-size: 36px;
+	font-size: 42px;
 	margin-bottom: 0;
 }
 .project1-title {
@@ -59,7 +61,9 @@ h2{ /*affects subtitles of main, bottom containers*/
 	color: #dd29d6
 }
 .project1-description, .project2-description , .project3-description{
-	color: #c2c2c2;
+	color: rgb(230, 230, 230);
+	font-size: 18px;
+	letter-spacing: 0.5px;
 }
 
 /* ==========================================
@@ -67,19 +71,14 @@ h2{ /*affects subtitles of main, bottom containers*/
 ========================================== */
 .top-container {
 	font-weight: 400;
-	margin-bottom: -90px;
+	margin: 0 40px -90px 40px;
 }
 .contact{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	
-
-	font-size: 24px;
-
-	height: 11em;
-	
+	height: 300px;
 }
 
 .resume-button {
@@ -114,32 +113,7 @@ h2{ /*affects subtitles of main, bottom containers*/
 
 /* ==========================================
    CONTACT BAR (Outside Links)
-========================================== 
-.outside-links {
-	position: fixed;
-	right: -190px;
-	bottom: 10%;
-	z-index: 3;
-	width: 300px;
-	height: 50px;
-	padding: 10px;
-	background-color: #323232;
-	border-radius: 20px;
-
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-
-	font-size: 20px;
-	transition: right 1s linear;
-}
-.outside-links-caption {
-	font-weight: 300;
-}
-.outside-links:hover {
-	right: 0;
-}	
-*/
+=============================================*/
 .outside-links-caption {
 	font-weight: 300;
 }
@@ -157,7 +131,6 @@ h2{ /*affects subtitles of main, bottom containers*/
 	justify-content: space-between;
 	align-items: center;
 
-	transform: translateX(0);
 	transition: top 1.5s linear, 
             right 1.5s linear,
             transform 1.5s linear;
@@ -209,12 +182,15 @@ h2{ /*affects subtitles of main, bottom containers*/
 /* ==========================================
    PROJECT STYLES (Shared)
 ========================================== */
+.main-container{
+	margin: 0 40px 0 40px;
+}
 .project1-container,
 .project2-container,
 .project3-container {
 	display: flex;
 	flex-direction: column;
-	height: 750px;
+	height: 800px;
 	flex: 1;
 	border-radius: 20px;
 	margin-bottom: 200px;
@@ -245,18 +221,31 @@ h2{ /*affects subtitles of main, bottom containers*/
 .project3-pic1,
 .project1-pic2,
 .project2-pic2,
-.project3-pic2{
+.project3-pic2,
+.project3-pic3{
 	position: absolute;
 	width: 50%;
 	border-radius: 20px;
 	z-index: 1;
 	transition: transform 0.5s linear;
+	border: 1px solid white
 }
+.project3-pic2{
+	width: 30%;
+	height:auto;
+}
+.project3-pic3{
+	bottom: 0;
+	left:30%;
+	width:23%;
+	height:auto;
+}
+
 .project1-pic1,
 .project2-pic1,
 .project3-pic1 {
 	right: 40px;
-	bottom: 0px;
+	bottom: 40px;
 }
 .project1-pic2,
 .project2-pic2, 
@@ -264,12 +253,14 @@ h2{ /*affects subtitles of main, bottom containers*/
 	left: 40px;
 	top: 40px;
 }
+
 .project1-pic1:hover,
 .project2-pic1:hover,
 .project1-pic2:hover,
 .project2-pic2:hover,
 .project3-pic1:hover,
-.project3-pic2:hover {
+.project3-pic2:hover,
+.project3-pic3:hover {
 	z-index: 2;
 	transform: scale(1.1);
 }
@@ -286,39 +277,40 @@ h2{ /*affects subtitles of main, bottom containers*/
 .project2-button, 
 .project3-button{
 	background-color: #222;
-	height: 30px;
-	width: 140px;
-	border-radius: 15px;
+	width: fit-content;
+	border-radius: 100px;
 	cursor: pointer;
+	font-size:16px;
+	padding:10px 16px;
 }
 .project1-button {
 	color: #db932e;
-	border: 2px solid #db932e;
+	border: 2.5px solid #db932e;
 }
 .project2-button {
 	color: #db3926;
-	border: 2px solid #db3926;
+	border: 2.5px solid #db3926;
 }
 .project3-button {
 	color: #dd29d6;
-	border: 2px solid #dd29d6;
+	border: 2.5px solid #dd29d6;
 }
 .project1-button:hover {
 	background-color: white;
 	color: black;
-	border: 2px solid #246cd1;
+	border: 2.5px solid #246cd1;
 	box-shadow: 0px 0px 10px 3px #246cd1;
 }
 .project2-button:hover {
 	background-color: white;
 	color: black;
-	border: 2px solid #29dddd;
+	border: 2.5px solid #29dddd;
 	box-shadow: 0px 0px 10px 3px #24c6d9;
 }
 .project3-button:hover {
 	background-color: white;
 	color: black;
-	border: 2px solid #22d629;
+	border: 2.5px solid #22d629;
 	box-shadow: 0px 0px 10px 3px #22d629;
 }
 /* Project Shadows */
@@ -326,11 +318,10 @@ h2{ /*affects subtitles of main, bottom containers*/
 	box-shadow: 0px 0px 30px 10px #246cd1;
 }
 .project2-container {
-	box-shadow: 0px 0px 40px 15px rgba(36,198,217,0.8);
+	box-shadow: 0px 0px 30px 10px rgba(36,198,217,0.8);
 }
 .project3-container{
-	box-shadow: 0px 0px 40px 15px rgba(34,214,42,0.7);
-	animation: softPulse2 4s infinite;
+	box-shadow: 0px 0px 30px 10px rgba(34,214,42,0.7);
 }
 
 /* ==========================================
@@ -340,8 +331,7 @@ h2{ /*affects subtitles of main, bottom containers*/
 .bottom-container{
 	display: flex;
 	flex-direction: column;
-
-	margin-bottom: 150px;
+	margin: 0 40px 150px 40px;
 }
 
 .learning-now {
@@ -421,11 +411,7 @@ h2{ /*affects subtitles of main, bottom containers*/
 
 
 
-@media (max-width: 830px) {
-  .general {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+@media (max-width: 850px) {
 
   .title {
     font-size: 64px;
@@ -463,6 +449,14 @@ h2{ /*affects subtitles of main, bottom containers*/
     position: static;
     transform: none;
   }
+  .project3-pic3{
+	position: static;
+	transform: none;
+	width:85%;
+	height:500px;
+	object-fit: cover;
+  }
+  
 
   .project1-container,
   .project2-container,
@@ -476,10 +470,19 @@ h2{ /*affects subtitles of main, bottom containers*/
 	margin: 0 55px 30px 55px;
 	font-weight: 300;
 }
-  
+  .project1-title,
+  .project2-title,
+  .project3-title{
+	font-size:36px;
+  }
+  .project1-description,
+  .project2-description,
+  .project3-description{
+	font-size:16px;
+  }
 }
 
-@media (max-width: 1350px) and (min-width: 831px) {
+@media (max-width: 1250px) and (min-width: 851px) {
 
   .title {
     font-size: 72px;
@@ -495,9 +498,14 @@ h2{ /*affects subtitles of main, bottom containers*/
   .project1-pic2,
   .project2-pic1,
   .project2-pic2,
-  .project3-pic1,
-  .project3-pic2{
+  .project3-pic1{
     width: 60%;
+  }
+  .project3-pic2{
+	width:35%;
+  }
+  .project3-pic3{
+	width:35%;
   }
   
 }
