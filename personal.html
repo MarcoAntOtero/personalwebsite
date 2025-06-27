@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+
+	<meta charset="utf-8">
+	<title>Marco Otero</title>
+	<link rel = "stylesheet" href = "personal.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+	<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+	<main>
+		<div class="general">
+			<div class="top-container">
+				<h1 class="title">
+					Marco Otero
+				</h1>
+				<div class="bio">
+					Hi, I'm Marco Otero, a Computer Science sophomore at Georgetown University.
+I thrive on building from the ground up whether it's designing a 2D game in C++ or constructing a PC. My passion lies in exploring the intersection of hardware and software, and I seek out projects that challenge me to learn and innovate. Beyond coding, I enjoy disassembling, testing, and rebuilding, always curious to understand the inner working of things and how to improve them.
+				</div>
+				<div class = "contact">
+					<button onclick = "window.location.href='assets/marco-otero-resume.pdf';" class="resume-button" target="_blank">Download Resume</button>
+					<div class="outside-links">
+						<h4 class = "outside-links-caption"> Contact Me </h4>
+						<a href = "https://www.linkedin.com/in/marco-otero935" class = "linkedin-icon" target = "_blank">
+							<img src = "assets/icons8-linkedin.svg" class = "linkedin-icon-img">					
+						</a>
+						<a href = "https://github.com/MarcoAntOtero" class = "github-link" target = "_blank">
+							<svg class="github-ring" width="2.2em" height="2.2em" viewBox="0 0 100 100">
+    							<circle class="ring" cx="50" cy="50" r="43" fill="lightgray" stroke="white" stroke-width="15" />
+    							<clipPath id="circleClip">
+									<circle cx="50" cy="50" r="45" />
+    							</clipPath>
+								<image
+      								href="assets/github-mark.svg"
+									x="5"
+									y="5"
+									width="90"
+									height="90"
+									clip-path="url(#circleClip)"
+								/>
+							</svg>	
+						</a>
+						<a href = "mailto:oterom935@gmail.com" class = "email-icon" target = "_blank">
+							<img src = "assets/email-1-svgrepo-com.svg" class ="email-icon-img">					
+						</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="main-container">
+				<h2 class = "main-container-title">
+					Projects	
+				</h2>
+				<div class="project1-container">
+					<div class ="img1-container">
+						<img src = "assets/Screenshot 2025-06-06 at 11.48.27 AM.png" alt="gameSS1" class = "project1-pic1">
+						<img src = "assets/Screenshot 2025-06-06 at 11.50.57 AM.png", alt="gameSS2" class = "project1-pic2">
+					</div>
+					<div class = "project1-header">
+						<h3 class = "project1-title">
+							Space Shooter
+						</h3>
+						<p class = "project1-description">After wanting to deepen my understanding of game development, I built a 2D space shooter in C++ using SFML. The game simulates player movement, enemy AI, shooting mechanics, and collision detection in a modular, object-oriented architecture. I engineered features like dynamic background titling, directional shooting based on mouse position, health and scoring systems, and enemy destruction animations.</p>
+						<button class = "project1-button" onclick="window.open('https://github.com/MarcoAntOtero/space-shooter','_blank')">View Code</button>
+					</div>
+				</div>
+				<div class="project2-container">
+					<div class ="img2-container">
+						<img src = "assets/Screenshot 2025-06-06 at 11.48.27 AM.png" alt="redditSS1" class = "project2-pic1">
+						<img src = "assets/Screenshot 2025-06-06 at 11.50.57 AM.png", alt="redditSS2" class = "project2-pic2">
+					</div>
+					<div class = "project2-header">
+						<h3 class = "project2-title">
+							Reddit Bot
+						</h3>
+						<p class = "project2-description">Built a Reddit bot using Python and the PRAW API. I used asynchronous scripting and handled rate-limiting logic manually. The bot monitored subreddits and responded based on sentiment analysis.</p>
+						<button class = "project2-button" onclick="window.open('https://github.com/MarcoAntOtero/eduStatsBot','_blank')">View Code</button>
+					</div>
+				</div>
+				<div class="project3-container">
+					<div class ="img3-container">
+						<img src = "assets/Screenshot 2025-06-06 at 11.48.27 AM.png" alt="routeSS1" class = "project3-pic1">
+						<img src = "assets/Screenshot 2025-06-06 at 11.50.57 AM.png", alt="routeSS2" class = "project3-pic2">
+					</div>
+					<div class = "project3-header">
+						<h3 class = "project3-title">
+							Route
+						</h3>
+						<p class = "project3-description">Crafted a word-ladder puzzle where players transform a start word into a target word by changing one letter at a time. Built a Node.js script to generate a trie-based dictionary for fast, real-time word validation. On the front end, implemented responsive UI with animated feedback for each guess, hint and “how to play” modal dialogs, and a guess tracking system showing both current progress and target metrics. Deployed on my website with live demo and open-source repository.</p>
+						<button class = "project3-button" onclick="window.open('https://github.com/MarcoAntOtero/route-game','_blank')">View Code</button>
+					</div>
+				</div>
+			</div>
+  				<div class="bottom-container">
+					<h2>Currently Exploring</h2>
+					<div class="learning-now">
+						<div class="learning-item">
+							<img src="assets/OIP.jpg" alt="rpg" class="learning-image" />
+							<div class="learning-text">
+								<div class="learning-title">2D RPG Game</div>
+								<p>Developing top-down 2D RPG using C++ and UE5 and Godot. My work includes programming core gameplay systems such as custom character movement on the XY plane, precise Flipbook animation switcihing, and dynamic Y-sorting for accurate depth layering. I also design and draw the pixel art assets including the modular tilemaps, sprite sheets, and environmental elements like trees and terrain.</p>
+							</div>
+						</div>
+						<div class="learning-item">
+							<img src="assets/OIP.jpg" alt="openGL" class="learning-image" />
+							<div class="learning-text">
+								<div class="learning-title">OpenGL</div>
+								<p>Exploring shader compilation vertex buffer management, sprite animation, and camera handling all written from scratch. By desigining classes like Texture, Mesh. Sprite, and Shader in C++, I am gaining experience with GPU pipelines, OpenGL state management and modular software design. It is part of my broader goal to master low-level systems and rendering workflows beyond standard game engines.</p>
+							</div>
+						</div>
+					</div>
+					<button class="back-top-button" id = "scrollToTopBtn">⬆ Back to Top</button>
+				</div>
+			<div class="footer">
+				<p class="footer-text">&copy;2025 Marco Otero</p>
+				<p class="footer-text">Made with ❤️</p>
+			</div>
+		</div>
+	</main>
+	<script src="main.js"></script>
+	
+	
+	
+	
+</body>
+</html>

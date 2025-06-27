@@ -1,0 +1,503 @@
+/* ==========================================
+   GLOBAL STYLES
+========================================== */
+* {
+	color: white;
+	font-family: "Roboto Slab", serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+body {
+	background-color: #222;
+}
+.general {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: space-between;
+	margin-right:80px;
+	margin-left:80px;
+}
+/* ==========================================
+   TYPOGRAPHY
+========================================== */
+.title {
+	font-size: 144px;
+	margin-bottom: 40px;
+	background: linear-gradient(to right, #7542eb, #ce34ec, #9563f0, #7542eb);
+	background-size: 200%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animate-gradient 2.5s linear infinite;
+}
+
+@keyframes animate-gradient {
+	to {
+		background-position: 200%;
+	}
+}
+
+.bio {
+	font-size: 48px;
+}
+h2{ /*affects subtitles of main, bottom containers*/
+	font-size: 72px;
+}
+.project1-title, .project2-title , .project3-title{
+	font-weight: 300;
+	font-size: 36px;
+	margin-bottom: 0;
+}
+.project1-title {
+	color: #dd9530;
+}
+.project2-title {
+	color: #db3926;
+}
+.project3-title{
+	color: #dd29d6
+}
+.project1-description, .project2-description , .project3-description{
+	color: #c2c2c2;
+}
+
+/* ==========================================
+   TOP CONTAINER
+========================================== */
+.top-container {
+	font-weight: 400;
+	margin-bottom: -90px;
+}
+.contact{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	
+
+	font-size: 24px;
+
+	height: 11em;
+	
+}
+
+.resume-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 50px;
+  width: 250px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 22px;
+
+  background: linear-gradient(to right, #7542eb, #ce34ec, #9563f0, #7542eb);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 2.5s linear infinite;
+}
+
+@keyframes animate-gradient {
+	to {
+		background-position: 200%;
+	}
+}
+
+
+
+
+
+
+/* ==========================================
+   CONTACT BAR (Outside Links)
+========================================== 
+.outside-links {
+	position: fixed;
+	right: -190px;
+	bottom: 10%;
+	z-index: 3;
+	width: 300px;
+	height: 50px;
+	padding: 10px;
+	background-color: #323232;
+	border-radius: 20px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	font-size: 20px;
+	transition: right 1s linear;
+}
+.outside-links-caption {
+	font-weight: 300;
+}
+.outside-links:hover {
+	right: 0;
+}	
+*/
+.outside-links-caption {
+	font-weight: 300;
+}
+.outside-links{
+	margin: 0px 0px 0px 0px;
+	font-size: 24px;
+	z-index: 10;
+	width: 350px;
+	height: 50px;
+	padding: 10px;
+	background-color: #323232;
+	border-radius: 20px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	transform: translateX(0);
+	transition: top 1.5s linear, 
+            right 1.5s linear,
+            transform 1.5s linear;
+}
+
+.outside-links.fixed {
+  position: fixed;
+  top: 0px;
+  right: 80px;
+  transform: translateX(300px);
+}
+.outside-links.fixed:hover {
+	right: 300px;
+}	
+
+/* Icons */
+.linkedin-icon,
+.email-icon-img {
+	filter: brightness(0) saturate(100%) invert(77%) sepia(93%) saturate(1%) hue-rotate(313deg) brightness(84%) contrast(92%);
+	transition: filter 0.5s linear;
+	margin-top:10px;
+	width: 2em;
+	height: 2.5em;
+}
+
+
+
+
+.linkedin-icon:hover,
+.email-icon:hover .email-icon-img {
+	filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(65deg) brightness(106%) contrast(102%);
+}
+
+/* GitHub ring animation */
+.github-ring {
+	display: block;
+}
+.ring {
+	stroke-dasharray: 301.59;
+	stroke-dashoffset: 301.59;
+	transform: rotate(-90deg);
+	transform-origin: 50% 50%;
+	transition: stroke-dashoffset 1s ease;
+}
+.github-link:hover .ring {
+	stroke-dashoffset: 0;
+}
+
+/* ==========================================
+   PROJECT STYLES (Shared)
+========================================== */
+.project1-container,
+.project2-container,
+.project3-container {
+	display: flex;
+	flex-direction: column;
+	height: 750px;
+	flex: 1;
+	border-radius: 20px;
+	margin-bottom: 200px;
+
+	opacity: 0;
+	transform: translateY(40px);
+	transition: opacity 0.4s linear, transform 0.4s linear;
+
+	
+}
+.project1-container.is-visible,
+.project2-container.is-visible,
+.project3-container.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.img1-container,
+.img2-container,
+.img3-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.project1-pic1,
+.project2-pic1,
+.project3-pic1,
+.project1-pic2,
+.project2-pic2,
+.project3-pic2{
+	position: absolute;
+	width: 50%;
+	border-radius: 20px;
+	z-index: 1;
+	transition: transform 0.5s linear;
+}
+.project1-pic1,
+.project2-pic1,
+.project3-pic1 {
+	right: 40px;
+	bottom: 0px;
+}
+.project1-pic2,
+.project2-pic2, 
+.project3-pic2{
+	left: 40px;
+	top: 40px;
+}
+.project1-pic1:hover,
+.project2-pic1:hover,
+.project1-pic2:hover,
+.project2-pic2:hover,
+.project3-pic1:hover,
+.project3-pic2:hover {
+	z-index: 2;
+	transform: scale(1.1);
+}
+
+.project1-header,
+.project2-header, 
+.project3-header{
+	margin: -40px 25px 30px 40px;
+	font-weight: 300;
+}
+
+/* Project Buttons */
+.project1-button,
+.project2-button, 
+.project3-button{
+	background-color: #222;
+	height: 30px;
+	width: 140px;
+	border-radius: 15px;
+	cursor: pointer;
+}
+.project1-button {
+	color: #db932e;
+	border: 2px solid #db932e;
+}
+.project2-button {
+	color: #db3926;
+	border: 2px solid #db3926;
+}
+.project3-button {
+	color: #dd29d6;
+	border: 2px solid #dd29d6;
+}
+.project1-button:hover {
+	background-color: white;
+	color: black;
+	border: 2px solid #246cd1;
+	box-shadow: 0px 0px 10px 3px #246cd1;
+}
+.project2-button:hover {
+	background-color: white;
+	color: black;
+	border: 2px solid #29dddd;
+	box-shadow: 0px 0px 10px 3px #24c6d9;
+}
+.project3-button:hover {
+	background-color: white;
+	color: black;
+	border: 2px solid #22d629;
+	box-shadow: 0px 0px 10px 3px #22d629;
+}
+/* Project Shadows */
+.project1-container {
+	box-shadow: 0px 0px 30px 10px #246cd1;
+}
+.project2-container {
+	box-shadow: 0px 0px 40px 15px rgba(36,198,217,0.8);
+}
+.project3-container{
+	box-shadow: 0px 0px 40px 15px rgba(34,214,42,0.7);
+	animation: softPulse2 4s infinite;
+}
+
+/* ==========================================
+	BOTTOM CONTAINER
+========================================== */
+
+.bottom-container{
+	display: flex;
+	flex-direction: column;
+
+	margin-bottom: 150px;
+}
+
+.learning-now {
+	background: linear-gradient(145deg, #2c2c2c, #3a3a3a);
+	border-radius: 20px;
+	padding: 40px;
+	max-width: 900px;
+	margin: 0 auto 60px;
+	box-shadow: 0px 0px 30px 10px rgba(117, 66, 235, 0.3);
+	animation: softPulse 4s infinite;
+}
+
+@keyframes softPulse {
+	0%, 100% {
+		box-shadow: 0px 0px 30px 10px rgba(117, 66, 235, 0.2);
+	}
+	50% {
+		box-shadow: 0px 0px 40px 15px rgba(117, 66, 235, 0.4);
+	}
+}
+
+
+.learning-title {
+	font-weight: bold;
+}
+
+.learning-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-right: 20px;
+  filter: grayscale(20%) brightness(1.1);
+  transition: transform 0.3s ease;
+}
+
+.learning-item:hover .learning-image {
+  transform: scale(1.1);
+}
+
+.back-top-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 50px;
+  width: 180px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 18px;
+
+  background: linear-gradient(to right, #7542eb, #ce34ec, #9563f0, #7542eb);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 2.5s linear infinite;
+}
+
+/* ==========================================
+	FOOTER
+========================================== */
+.footer {
+	background-color: rgb(70, 70, 70);
+	padding: 20px 120px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 16px;
+	
+	
+	flex:1;
+	margin: 0 -90px -10px -90px;
+}
+
+
+
+
+
+
+@media (max-width: 830px) {
+  .general {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .title {
+    font-size: 64px;
+  }
+  h2{
+	font-size: 54px;
+  }
+  .bio {
+    font-size: 24px;
+  }
+
+  .outside-links {
+    display: none;
+  }
+  
+  .img1-container,
+  .img2-container,
+  .img3-container {
+	margin-top: 30px;
+	margin-bottom: -20px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+  }
+
+  .project1-pic1,
+  .project1-pic2,
+  .project2-pic1,
+  .project2-pic2,
+  .project3-pic1,
+  .project3-pic2{
+    width: 85%;
+    position: static;
+    transform: none;
+  }
+
+  .project1-container,
+  .project2-container,
+  .project3-container {
+    height: auto;
+  }
+
+  .project1-header,
+  .project2-header, 
+  .project3-header{
+	margin: 0 55px 30px 55px;
+	font-weight: 300;
+}
+  
+}
+
+@media (max-width: 1350px) and (min-width: 831px) {
+
+  .title {
+    font-size: 72px;
+  }
+  h2{
+	font-size: 58px;
+  }
+  .bio {
+    font-size: 36px;
+  }
+
+  .project1-pic1,
+  .project1-pic2,
+  .project2-pic1,
+  .project2-pic2,
+  .project3-pic1,
+  .project3-pic2{
+    width: 60%;
+  }
+  
+}
