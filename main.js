@@ -44,22 +44,17 @@ document.addEventListener("DOMContentLoaded", () => {
             behavior: "smooth",
         });
     };
-    const outsideLinks = document.querySelector(".outside-links");
+  const outsideLinks = document.getElementById("outside-links");
+    window.addEventListener("scroll", () => {
+      const rect = outsideLinks.getBoundingClientRect();
 
-    const observer2 = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.boundingClientRect.top <= 0 && !entry.isIntersecting) {
-          outsideLinks.classList.add("slide-in");
-        } 
-        else {
-          outsideLinks.classList.remove("slide-in");
-        }
-      },
-    {
-      threshold: [1.0],
-    }
-   );
-   observer2.observe(outsideLinks);
+      if(rect.top<=0){
+        outsideLinks.classList.add("slide-in");
+      }
+      else {
+        outsideLinks.classList.remove("slide-in");
+      }
+    });
 
     // Add event listeners
     window.addEventListener("scroll", { passive: true });
