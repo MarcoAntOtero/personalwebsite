@@ -115,37 +115,35 @@ h2{ /*affects subtitles of main, bottom containers*/
    CONTACT BAR (Outside Links)
 =============================================*/
 .outside-links-caption {
-	font-weight: 300;
+  font-weight: 300;
 }
 .outside-links{
-	margin: 0px 0px 0px 0px;
-	font-size: 24px;
-	z-index: 10;
-	width: 350px;
-	height: 50px;
-	padding: 10px;
-	background-color: #323232;
-	border-radius: 20px;
+  font-size: 24px;
+  z-index: 10;
+  width: 350px;
+  height: 50px;
+  padding: 10px;
+  background-color: #323232;
+  border-radius: 20px;
 
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-	transition: top 1.5s linear, 
-            right 1.5s linear,
-            transform 1.5s linear;
+  position: sticky;
+  top:0px;
+  right:60px;
+  align-self: flex-end;
+  margin-top: -100px;
+  margin-right:50px;
+
+  transform: translateX(0px);
+  transition: transform 1s ease-in-out;
 }
 
 .outside-links.fixed {
-  position: fixed;
-  top: 0px;
-  right: 80px;
-  transform: translateX(300px);
+	transform: translateX(400px);
 }
-.outside-links.fixed:hover {
-	right: 300px;
-}	
-
 /* Icons */
 .linkedin-icon,
 .email-icon-img {
@@ -403,7 +401,7 @@ h2{ /*affects subtitles of main, bottom containers*/
 	
 	
 	flex:1;
-	margin: 0 -90px -10px -90px;
+	margin: 0 0px -10px 0px;
 }
 
 
