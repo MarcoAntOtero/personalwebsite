@@ -1,4 +1,3 @@
-const outsideLinks = document.querySelector(".outside-links");
 /*let offsetTop = outsideLinks.offsetTop;
 
 
@@ -6,18 +5,6 @@ window.addEventListener("resize", () => {
   offsetTop = outsideLinks.offsetTop;
 });
 */
-const observer2 = new IntersectionObserver(
-  ([entry]) => {
-    if (entry) {
-      outsideLinks.classList.add("slide-in");
-    } 
-    else {
-      outsideLinks.classList.remove("slide-in");
-    }
-  },
-  {threshold: 1.0}
-);
-observer2.observe(outsideLinks);
 /*
 window.addEventListener("scroll", () => {
   if (window.scrollY > offsetTop) {
@@ -46,7 +33,6 @@ const observer = new IntersectionObserver(entries => {
 sections.forEach(section => {
   observer.observe(section);
 });
-observer2.observe(outsideLinks);
 
 //Scroll to top btn
 document.addEventListener("DOMContentLoaded", () => {
@@ -58,10 +44,24 @@ document.addEventListener("DOMContentLoaded", () => {
             behavior: "smooth",
         });
     };
+    const outsideLinks = document.querySelector(".outside-links");
 
+    const observer2 = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.boundingClientRect.top <= 0 && !entry.isIntersecting) {
+          outsideLinks.classList.add("slide-in");
+        } 
+        else {
+          outsideLinks.classList.remove("slide-in");
+        }
+      },
+    {
+      threshold: [1.0],
+    }
+   );
+   observer2.observe(outsideLinks);
 
     // Add event listeners
     window.addEventListener("scroll", { passive: true });
     scrollToTopBtn.addEventListener("click", scrollToTop);
-
 });

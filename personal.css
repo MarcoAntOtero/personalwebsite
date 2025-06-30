@@ -132,16 +132,14 @@ h2{ /*affects subtitles of main, bottom containers*/
 
   position: sticky;
   top:0px;
-  right:60px;
-  align-self: flex-end;
-  margin-top: -100px;
   margin-right:50px;
+  margin-left: auto;
 
   transform: translateX(0px);
   transition: transform 1s ease-in-out;
 }
 
-.outside-links.fixed {
+.outside-links.slide-in {
 	transform: translateX(400px);
 }
 /* Icons */
