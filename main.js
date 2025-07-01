@@ -27,7 +27,7 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, {
-  threshold: 0.37, // Trigger when 10% of the element is visible
+  threshold: 0.45, // Trigger when 10% of the element is visible
 });
 
 sections.forEach(section => {
@@ -36,6 +36,7 @@ sections.forEach(section => {
 
 //Scroll to top btn
 document.addEventListener("DOMContentLoaded", () => {
+    
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
     // Smoothly scroll to the top of the page
     const scrollToTop = () => {
@@ -44,19 +45,72 @@ document.addEventListener("DOMContentLoaded", () => {
             behavior: "smooth",
         });
     };
-  const outsideLinks = document.getElementById("outside-links");
-    window.addEventListener("scroll", () => {
-      const rect = outsideLinks.getBoundingClientRect();
-
-      if(rect.top<=0){
-        outsideLinks.classList.add("slide-in");
-      }
-      else {
-        outsideLinks.classList.remove("slide-in");
-      }
-    });
-
     // Add event listeners
     window.addEventListener("scroll", { passive: true });
     scrollToTopBtn.addEventListener("click", scrollToTop);
+    /*===========================================================
+    MESSAGE: I HAVE NO CLUE HOW THIS WORKS, I JUST COPIED IT FROM THE INTERNET
+    BUT IT WORKS AND I DON'T WANT TO BREAK IT.
+
+    ONLY GOD KNOWS HOW THIS WORKS
+    =========================================================*/
+     const outsideLinks = document.getElementById("outside-links");
+
+  let mouseIn = false;
+  let lastTransform = null;
+  let scrollSlideDistance = null;
+  let isSticky = false;
+
+  outsideLinks.addEventListener("mouseenter", () => {
+    const rect = outsideLinks.getBoundingClientRect();
+    if (rect.top > 0) return;
+
+    mouseIn = true;
+
+    const visibleWidth = 160/2;
+    const slideInDistance = outsideLinks.offsetWidth - visibleWidth;
+
+    const desiredTransform = `translateX(${slideInDistance}px)`;
+    outsideLinks.style.transform = desiredTransform;
+    lastTransform = desiredTransform;
+  });
+
+  outsideLinks.addEventListener("mouseleave", () => {
+    mouseIn = false;
+
+    if (isSticky && scrollSlideDistance !== null) {
+      const desiredTransform = `translateX(${scrollSlideDistance}px)`;
+      outsideLinks.style.transform = desiredTransform;
+      lastTransform = desiredTransform;
+    }
+  });
+
+  window.addEventListener("scroll", () => {
+    if (mouseIn) return;
+
+    const rect = outsideLinks.getBoundingClientRect();
+    const visibleWidth = 160;
+
+    let desiredTransform = "";
+
+    if (rect.top <= 0 && !isSticky) {
+      // Bar just became sticky — calculate once
+      const distanceFromRight = window.innerWidth - rect.right;
+      scrollSlideDistance = Math.round(outsideLinks.offsetWidth - visibleWidth + distanceFromRight);
+      desiredTransform = `translateX(${scrollSlideDistance}px)`;
+      isSticky = true;
+    } else if (rect.top > 0 && isSticky) {
+      // Bar is back in normal layout
+      desiredTransform = "translateX(0)";
+      isSticky = false;
+      scrollSlideDistance = null;
+    } else {
+      return; // no state change — skip
+    }
+
+    if (desiredTransform !== lastTransform) {
+      outsideLinks.style.transform = desiredTransform;
+      lastTransform = desiredTransform;
+    }
+  });
 });

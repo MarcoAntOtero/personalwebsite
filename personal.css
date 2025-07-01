@@ -9,6 +9,7 @@
 }
 body {
 	background-color: #222;
+	overflow-x: hidden;
 }
 .general {
 	display: flex;
@@ -82,22 +83,22 @@ h2{ /*affects subtitles of main, bottom containers*/
 }
 
 .resume-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-  height: 50px;
-  width: 250px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 22px;
+	height: 50px;
+	width: 250px;
+	border-radius: 25px;
+	cursor: pointer;
+	font-size: 22px;
 
-  background: linear-gradient(to right, #7542eb, #ce34ec, #9563f0, #7542eb);
-  background-size: 200%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: animate-gradient 2.5s linear infinite;
+	background: linear-gradient(to right, #7542eb, #ce34ec, #9563f0, #7542eb);
+	background-size: 200%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animate-gradient 2.5s linear infinite;
 }
 
 @keyframes animate-gradient {
@@ -115,33 +116,32 @@ h2{ /*affects subtitles of main, bottom containers*/
    CONTACT BAR (Outside Links)
 =============================================*/
 .outside-links-caption {
-  font-weight: 300;
+	font-weight: 300;
 }
 .outside-links{
-  font-size: 24px;
-  z-index: 10;
-  width: 350px;
-  height: 50px;
-  padding: 10px;
-  background-color: none;
-  border-radius: 20px;
+	font-size: 24px;
+	z-index: 999;
+	width: 350px;
+	height: 50px;
+	padding: 10px;
+	background-color: none;
+	border-radius: 20px;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 
-  position: sticky;
-  top:0px;
-  margin-right:50px;
-  margin-left: auto;
+	position: sticky;
+	top:0px;
+	margin: -90px 50px 50px auto;
 
-  transform: translateX(0px);
-  transition: transform 1s ease-in-out;
+	transform: translateX(0);
+	transition: transform 1s ease-in-out;
+	pointer-events: auto;
 }
 
-.outside-links.slide-in {
-	background-color: #323232;
-	transform: translateX(400px);
+.outside-links:hover{
+	background-color: #545454;
 }
 /* Icons */
 .linkedin-icon,
