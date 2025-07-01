@@ -47,6 +47,10 @@ body {
 h2{ /*affects subtitles of main, bottom containers*/
 	font-size: 72px;
 }
+.bottom-container-title{
+	margin-top: -50px;
+	align-self: center;
+}
 .project1-title, .project2-title , .project3-title{
 	font-weight: 300;
 	font-size: 42px;
@@ -126,38 +130,33 @@ h2{ /*affects subtitles of main, bottom containers*/
 	padding: 10px;
 	background-color: none;
 	border-radius: 20px;
-
+	
+	font-weight: bolder;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 
 	position: sticky;
 	top:0px;
-	margin: -90px 50px 50px auto;
+	margin: -95px 50px 50px auto;
 
 	transform: translateX(0);
 	transition: transform 1s ease-in-out;
 	pointer-events: auto;
 }
 
-.outside-links:hover{
-	background-color: #545454;
-}
 /* Icons */
-.linkedin-icon,
+.linkedin-icon-img,
 .email-icon-img {
 	filter: brightness(0) saturate(100%) invert(77%) sepia(93%) saturate(1%) hue-rotate(313deg) brightness(84%) contrast(92%);
 	transition: filter 0.5s linear;
 	margin-top:10px;
-	width: 2em;
+	width: 2.2em;
 	height: 2.5em;
 }
 
-
-
-
 .linkedin-icon:hover,
-.email-icon:hover .email-icon-img {
+.email-icon-img:hover {
 	filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(65deg) brightness(106%) contrast(102%);
 }
 
@@ -191,12 +190,10 @@ h2{ /*affects subtitles of main, bottom containers*/
 	flex: 1;
 	border-radius: 20px;
 	margin-bottom: 200px;
-
+	
 	opacity: 0;
 	transform: translateY(40px);
-	transition: opacity 0.4s linear, transform 0.4s linear;
-
-	
+	transition: opacity 0.4s linear, transform 0.4s linear;	
 }
 .project1-container.is-visible,
 .project2-container.is-visible,
@@ -328,7 +325,8 @@ h2{ /*affects subtitles of main, bottom containers*/
 .bottom-container{
 	display: flex;
 	flex-direction: column;
-	margin: 0 40px 150px 40px;
+	margin: 0px 40px 150px 40px;
+	
 }
 
 .learning-now {
@@ -361,12 +359,8 @@ h2{ /*affects subtitles of main, bottom containers*/
   object-fit: contain;
   margin-right: 20px;
   filter: grayscale(20%) brightness(1.1);
-  transition: transform 0.3s ease;
 }
 
-.learning-item:hover .learning-image {
-  transform: scale(1.1);
-}
 
 .back-top-button{
   display: flex;
@@ -391,7 +385,7 @@ h2{ /*affects subtitles of main, bottom containers*/
 	FOOTER
 ========================================== */
 .footer {
-	background-color: rgb(70, 70, 70);
+	background-color: #323232;
 	padding: 20px 120px;
 	display: flex;
 	justify-content: space-between;
@@ -409,7 +403,6 @@ h2{ /*affects subtitles of main, bottom containers*/
 
 
 @media (max-width: 850px) {
-
   .title {
     font-size: 64px;
   }
@@ -419,11 +412,25 @@ h2{ /*affects subtitles of main, bottom containers*/
   .bio {
     font-size: 24px;
   }
-
-  .outside-links {
-    display: none;
+  .contact{
+	height: 160px;
+	margin-bottom:30px;
   }
-  
+  .outside-links{
+	position:fixed;
+	font-size: 18px;
+	top: 90%;
+	right: 0px;
+	transform: none;
+    margin: 0;       /* remove unwanted margins */
+    z-index: 1000;   /* ensure it sits above content */
+	background-color: #323232;
+	width: auto;
+	gap: 5px;
+  }
+  .outside-links-caption{
+	display: none;
+  }
   .img1-container,
   .img2-container,
   .img3-container {
@@ -464,7 +471,8 @@ h2{ /*affects subtitles of main, bottom containers*/
   .project1-header,
   .project2-header, 
   .project3-header{
-	margin: 0 55px 30px 55px;
+	width:85%;
+	margin: 0 auto 30px auto;
 	font-weight: 300;
 }
   .project1-title,
@@ -476,6 +484,19 @@ h2{ /*affects subtitles of main, bottom containers*/
   .project2-description,
   .project3-description{
 	font-size:16px;
+  }
+  .back-top-button{
+	font-size: 18px;
+  }
+  .resume-button{
+	width: 200px;
+	height: 40px;
+	font-size: 18px;
+  }
+  .footer{
+	justify-content: flex-start;
+	padding: 20px 40px;
+	gap: 10px;
   }
 }
 
@@ -505,4 +526,11 @@ h2{ /*affects subtitles of main, bottom containers*/
 	width:35%;
   }
   
+  .outside-links{
+	font-size: 20px;
+	z-index: 999;
+	width: 350px;
+	height: 50px;
+	padding: 10px;
+}
 }

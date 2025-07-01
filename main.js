@@ -29,7 +29,12 @@ const observer = new IntersectionObserver(entries => {
 }, {
   threshold: 0.45, // Trigger when 10% of the element is visible
 });
-
+/**entries.forEach(entry => {
+  const isVisible = entry.isIntersecting;
+  if (isVisible !== entry.target.classList.contains('is-visible')) {
+    entry.target.classList.toggle('is-visible', isVisible);
+  }
+});*/
 sections.forEach(section => {
   observer.observe(section);
 });
@@ -54,7 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ONLY GOD KNOWS HOW THIS WORKS
     =========================================================*/
-     const outsideLinks = document.getElementById("outside-links");
+    if(window.innerWidth < 851) return;
+    
+    const outsideLinks = document.getElementById("outside-links");
 
   let mouseIn = false;
   let lastTransform = null;
@@ -67,9 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mouseIn = true;
 
-    const visibleWidth = 160/2;
-    const slideInDistance = outsideLinks.offsetWidth - visibleWidth;
-
+    const visibleWidth = 140;
+    const fullSlide = scrollSlideDistance;
+    
+    const slideInDistance = fullSlide - (outsideLinks.offsetWidth - visibleWidth);
     const desiredTransform = `translateX(${slideInDistance}px)`;
     outsideLinks.style.transform = desiredTransform;
     lastTransform = desiredTransform;
@@ -99,12 +107,15 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollSlideDistance = Math.round(outsideLinks.offsetWidth - visibleWidth + distanceFromRight);
       desiredTransform = `translateX(${scrollSlideDistance}px)`;
       isSticky = true;
-    } else if (rect.top > 0 && isSticky) {
+      outsideLinks.style.backgroundColor = "#323232"; // Change background color when sticky
+    } 
+    else if (rect.top > 0 && isSticky) {
       // Bar is back in normal layout
       desiredTransform = "translateX(0)";
       isSticky = false;
       scrollSlideDistance = null;
-    } else {
+    } 
+    else {
       return; // no state change — skip
     }
 
