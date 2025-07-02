@@ -55,6 +55,7 @@ h2{ /*affects subtitles of main, bottom containers*/
 	font-weight: 300;
 	font-size: 42px;
 	margin-bottom: 0;
+	margin-top: 0px;
 }
 .project1-title {
 	color: #dd9530;
@@ -66,7 +67,7 @@ h2{ /*affects subtitles of main, bottom containers*/
 	color: #dd29d6
 }
 .project1-description, .project2-description , .project3-description{
-	color: rgb(230, 230, 230);
+	color: white;
 	font-size: 18px;
 	letter-spacing: 0.5px;
 }
@@ -148,12 +149,15 @@ h2{ /*affects subtitles of main, bottom containers*/
 /* Icons */
 .linkedin-icon-img,
 .email-icon-img {
-	filter: brightness(0) saturate(100%) invert(77%) sepia(93%) saturate(1%) hue-rotate(313deg) brightness(84%) contrast(92%);
-	transition: filter 0.5s linear;
 	margin-top:10px;
 	width: 2.2em;
 	height: 2.5em;
 }
+.linkedin-icon,
+.email-icon-img{
+	filter: brightness(0) saturate(100%) invert(77%) sepia(93%) saturate(1%) hue-rotate(313deg) brightness(84%) contrast(92%);
+	transition: filter 0.5s linear;
+} 
 
 .linkedin-icon:hover,
 .email-icon-img:hover {
@@ -231,15 +235,18 @@ h2{ /*affects subtitles of main, bottom containers*/
 .project3-pic3{
 	bottom: 0;
 	left:30%;
-	width:23%;
+	width:25%;
 	height:auto;
 }
 
 .project1-pic1,
-.project2-pic1,
-.project3-pic1 {
+.project2-pic1 {
 	right: 40px;
 	bottom: 40px;
+}
+.project3-pic1 {
+	right: 40px;
+	top: 60px;
 }
 .project1-pic2,
 .project2-pic2, 
@@ -262,7 +269,7 @@ h2{ /*affects subtitles of main, bottom containers*/
 .project1-header,
 .project2-header, 
 .project3-header{
-	margin: -40px 25px 30px 40px;
+	margin: 0px 40px 30px 40px;
 	font-weight: 300;
 }
 
@@ -427,6 +434,7 @@ h2{ /*affects subtitles of main, bottom containers*/
 	background-color: #323232;
 	width: auto;
 	gap: 5px;
+	padding: 10px 20px 15px 20px;
   }
   .outside-links-caption{
 	display: none;
@@ -447,17 +455,23 @@ h2{ /*affects subtitles of main, bottom containers*/
   .project1-pic2,
   .project2-pic1,
   .project2-pic2,
-  .project3-pic1,
-  .project3-pic2{
+  .project3-pic1{
     width: 85%;
     position: static;
     transform: none;
+  }
+  .project3-pic2{
+	width: 85%;
+	height: 400px;
+    position: static;
+    transform: none;
+	object-fit: cover;
   }
   .project3-pic3{
 	position: static;
 	transform: none;
 	width:85%;
-	height:500px;
+	height:400px;
 	object-fit: cover;
   }
   
@@ -479,6 +493,7 @@ h2{ /*affects subtitles of main, bottom containers*/
   .project2-title,
   .project3-title{
 	font-size:36px;
+	margin-top: 30px;
   }
   .project1-description,
   .project2-description,
@@ -523,7 +538,7 @@ h2{ /*affects subtitles of main, bottom containers*/
 	width:35%;
   }
   .project3-pic3{
-	width:35%;
+	width:33%;
   }
   
   .outside-links{
