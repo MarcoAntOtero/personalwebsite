@@ -54,6 +54,21 @@ I thrive on building from the ground up whether it's designing a 2D game in C++ 
 				<h2 class = "main-container-title">
 					Projects	
 				</h2>
+				<div class="project3-container">
+					<div class ="img3-container">
+						<img src = "assets/route2.png" alt="routeSS1" class = "project3-pic1">
+						<img src = "assets/route1.png", alt="routeSS2" class = "project3-pic2">
+						<img src = "assets/route3.png", alt="routeSS3" class = "project3-pic3">
+					</div>
+					<div class = "project3-header">
+						<h3 class = "project3-title">
+							Route
+						</h3>
+						<p class = "project3-description">Crafted a word-ladder puzzle where players transform a start word into a target word by changing one letter at a time. Built a Node.js script to generate a trie-based dictionary for fast, real-time word validation. On the front end, implemented responsive UI with animated feedback for each guess, hint and “how to play” modal dialogs, and a guess tracking system showing both current progress and target metrics. Deployed on NMDOT website.</p>
+						<button class = "project3-button" onclick="window.open('https://github.com/MarcoAntOtero/route-game','_blank')">View Code</button>
+						<button class = "project3-button2" onclick="window.open('https://www.dot.nm.gov/route','_blank')">View Site</button>
+					</div>
+				</div>
 				<div class="project1-container">
 					<div class ="img1-container">
 						<img src = "assets/Screenshot 2025-06-06 at 11.48.27 AM.png" alt="gameSS1" class = "project1-pic1">
@@ -76,42 +91,31 @@ I thrive on building from the ground up whether it's designing a 2D game in C++ 
 						<h3 class = "project2-title">
 							Reddit Bot
 						</h3>
-						<p class = "project2-description">Built a Reddit bot using Python and the PRAW API. I used asynchronous scripting and handled rate-limiting logic manually. The bot monitored subreddits and responded based on sentiment analysis.</p>
+						<p class = "project2-description">Built a Python bot tracking mental-health keywords (like 'burnout' and 'stress') across Reddit student communities. Uses PRAW ffor real-time data collection, Pandas for analysis, and Matplotlib for automated visualizations. Features thread-safe file operation, scheduled reporting, and Raspberry Pi deployment. Includes trend graphs and Reddit auto-posting.</p>
 						<button class = "project2-button" onclick="window.open('https://github.com/MarcoAntOtero/eduStatsBot','_blank')">View Code</button>
-					</div>
-				</div>
-				<div class="project3-container">
-					<div class ="img3-container">
-						<img src = "assets/route2.png" alt="routeSS1" class = "project3-pic1">
-						<img src = "assets/route1.png", alt="routeSS2" class = "project3-pic2">
-						<img src = "assets/route3.png", alt="routeSS3" class = "project3-pic3">
-					</div>
-					<div class = "project3-header">
-						<h3 class = "project3-title">
-							Route
-						</h3>
-						<p class = "project3-description">Crafted a word-ladder puzzle where players transform a start word into a target word by changing one letter at a time. Built a Node.js script to generate a trie-based dictionary for fast, real-time word validation. On the front end, implemented responsive UI with animated feedback for each guess, hint and “how to play” modal dialogs, and a guess tracking system showing both current progress and target metrics. Deployed on my website with live demo and open-source repository.</p>
-						<button class = "project3-button" onclick="window.open('https://github.com/MarcoAntOtero/route-game','_blank')">View Code</button>
-						<button class = "project3-button2" onclick="window.open('https://www.dot.nm.gov/route','_blank')">View Site</button>
 					</div>
 				</div>
 			</div>
   				<div class="bottom-container">
 					<h2 class = "bottom-container-title">Currently Exploring</h2>
-					<div class="learning-now">
-						<div class="learning-item">
-							<img src="assets/OIP.jpg" alt="rpg" class="learning-image" />
-							<div class="learning-text">
-								<div class="learning-title">2D RPG Game</div>
-								<p>Developing top-down 2D RPG using C++ and UE5 and Godot. My work includes programming core gameplay systems such as custom character movement on the XY plane, precise Flipbook animation switcihing, and dynamic Y-sorting for accurate depth layering. I also design and draw the pixel art assets including the modular tilemaps, sprite sheets, and environmental elements like trees and terrain.</p>
+					<div class="learning-container">
+						<div class = learning-text>
+							<div class="learning-item">
+								<div class="learning-text">
+									<div class="learning-title">OpenGL</div>
+									<p class ="learning-description">Exploring shader compilation vertex buffer management, sprite animation, and camera handling all written from scratch. By desigining classes like Texture, Mesh. Sprite, and Shader in C++, I am gaining experience with GPU pipelines, OpenGL state management and modular software design. It is part of my broader goal to master low-level systems and rendering workflows beyond standard game engines.</p>
+								</div>
+							</div>
+							<div class="learning-item">
+								<div class="learning-text">
+									<div class="learning-title">2D RPG Game</div>
+									<p>Developing top-down 2D RPG using C++ and UE5 and Godot. My work includes programming core gameplay systems such as custom character movement on the XY plane, precise Flipbook animation switcihing, and dynamic Y-sorting for accurate depth layering. I also design and draw the pixel art assets including the modular tilemaps, sprite sheets, and environmental elements like trees and terrain.</p>
+								</div>
 							</div>
 						</div>
-						<div class="learning-item">
-							<img src="assets/OIP.jpg" alt="openGL" class="learning-image" />
-							<div class="learning-text">
-								<div class="learning-title">OpenGL</div>
-								<p class ="learning-description">Exploring shader compilation vertex buffer management, sprite animation, and camera handling all written from scratch. By desigining classes like Texture, Mesh. Sprite, and Shader in C++, I am gaining experience with GPU pipelines, OpenGL state management and modular software design. It is part of my broader goal to master low-level systems and rendering workflows beyond standard game engines.</p>
-							</div>
+						<div class="learning-img-container">
+							<img src="assets/game1.png" alt="rpg1" class="learning-image"/>
+							<img src="assets/game2.png" alt="rpg2" class="learning-image"/>
 						</div>
 					</div>
 					<button class="back-top-button" id = "scrollToTopBtn" type="button">⬆ Back to Top</button>

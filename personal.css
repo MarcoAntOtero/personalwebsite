@@ -349,11 +349,11 @@ h2{ /*affects subtitles of main, bottom containers*/
 .bottom-container{
 	display: flex;
 	flex-direction: column;
-	margin: 0px 40px 150px 40px;
-	
+	justify-content: space-between;
+	margin: 0px 60px 150px 60px;
 }
 
-.learning-now {
+.learning-container {
 	background: linear-gradient(145deg, #2c2c2c, #3a3a3a);
 	border-radius: 20px;
 	padding: 40px;
@@ -361,6 +361,30 @@ h2{ /*affects subtitles of main, bottom containers*/
 	margin: 0 auto 60px;
 	box-shadow: 0px 0px 30px 10px rgba(117, 66, 235, 0.3);
 	animation: softPulse 4s infinite;
+	display: flex;
+}
+.learning-text{
+	display: flex;
+	flex-direction: column;
+	margin-right: 20px;
+	line-height: 1.75;
+}
+.learning-img-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
+	gap: 15px;
+}
+.learning-title {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.learning-image {
+	width: 300px;
+	object-fit: cover;
+	filter: brightness(1.2);
 }
 
 @keyframes softPulse {
@@ -371,20 +395,6 @@ h2{ /*affects subtitles of main, bottom containers*/
 		box-shadow: 0px 0px 40px 15px rgba(117, 66, 235, 0.4);
 	}
 }
-
-
-.learning-title {
-	font-weight: bold;
-}
-
-.learning-image {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  margin-right: 20px;
-  filter: grayscale(20%) brightness(1.1);
-}
-
 
 .back-top-button{
   display: flex;
@@ -431,7 +441,7 @@ h2{ /*affects subtitles of main, bottom containers*/
     font-size: 64px;
   }
   h2{
-	font-size: 54px;
+	font-size: 48px;
   }
   .bio {
     font-size: 24px;
@@ -447,7 +457,6 @@ h2{ /*affects subtitles of main, bottom containers*/
 	right: 0px;
 	transform: none;
     margin: 0;       /* remove unwanted margins */
-    z-index: 1000;   /* ensure it sits above content */
 	background-color: #323232;
 	width: auto;
 	gap: 5px;
@@ -467,7 +476,9 @@ h2{ /*affects subtitles of main, bottom containers*/
 	align-items: center;
 	justify-content: space-between;
   }
-
+  .learning-image{
+	width: 100%;
+  }
   .project1-pic1,
   .project1-pic2,
   .project2-pic1,
@@ -505,7 +516,7 @@ h2{ /*affects subtitles of main, bottom containers*/
 	width:85%;
 	margin: 0 auto 30px auto;
 	font-weight: 300;
-}
+  }
   .project1-title,
   .project2-title,
   .project3-title{
@@ -517,6 +528,13 @@ h2{ /*affects subtitles of main, bottom containers*/
   .project3-description{
 	font-size:16px;
   }
+  .learning-container{
+	flex-direction: column;
+  }
+  .learning-img-container{
+	flex-direction: column;
+  }
+  
   .back-top-button{
 	font-size: 18px;
   }
