@@ -203,25 +203,9 @@ h2{ /*affects subtitles of main, bottom containers*/
 }
 .project1-container.is-visible,
 .project2-container.is-visible,
-.project3-container.is-visible,
-.project4-container.is-visible {
+.project3-container.is-visible {
 	opacity: 1;
 	transform: translateY(0);
-}
-
-.project4-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	height: auto;
-	padding: 60px 0;
-	flex: 1;
-	border-radius: 20px;
-	margin-bottom: 200px;
-
-	opacity: 0;
-	transform: translateY(40px);
-	transition: opacity 0.4s linear, transform 0.4s linear;
 }
 
 .img1-container,
@@ -289,8 +273,7 @@ h2{ /*affects subtitles of main, bottom containers*/
 
 .project1-header,
 .project2-header,
-.project3-header,
-.project4-header{
+.project3-header{
 	margin: 0px 40px 30px 40px;
 	font-weight: 300;
 }
@@ -299,8 +282,7 @@ h2{ /*affects subtitles of main, bottom containers*/
 .project1-button,
 .project2-button,
 .project3-button,
-.project3-button2,
-.project4-button{
+.project3-button2{
 	background-color: #222;
 	width: fit-content;
 	border-radius: 100px;
@@ -327,10 +309,6 @@ h2{ /*affects subtitles of main, bottom containers*/
 	color: white;
 	border: 2.5px solid #22d629;
 }
-.project4-button {
-	color: #6c5ce7;
-	border: 2.5px solid #6c5ce7;
-}
 .project1-button:hover {
 	background-color: white;
 	color: #222;
@@ -355,12 +333,6 @@ h2{ /*affects subtitles of main, bottom containers*/
 	border: 2.5px solid #dd29d6;
 	box-shadow: 0px 0px 10px 3px #dd29d6;
 }
-.project4-button:hover {
-	background-color: white;
-	color: #222;
-	border: 2.5px solid #6c5ce7;
-	box-shadow: 0px 0px 10px 3px #6c5ce7;
-}
 /* Project Shadows */
 .project1-container {
 	box-shadow: 0px 0px 30px 10px #246cd1;
@@ -370,9 +342,6 @@ h2{ /*affects subtitles of main, bottom containers*/
 }
 .project3-container{
 	box-shadow: 0px 0px 30px 10px rgba(34,214,42,0.7);
-}
-.project4-container{
-	box-shadow: 0px 0px 30px 10px rgba(108,92,231,0.7);
 }
 
 /* ==========================================
@@ -539,30 +508,26 @@ h2{ /*affects subtitles of main, bottom containers*/
 
   .project1-container,
   .project2-container,
-  .project3-container,
-  .project4-container {
+  .project3-container {
     height: auto;
   }
 
   .project1-header,
   .project2-header,
-  .project3-header,
-  .project4-header{
+  .project3-header{
 	width:85%;
 	margin: 0 auto 30px auto;
 	font-weight: 300;
   }
   .project1-title,
   .project2-title,
-  .project3-title,
-  .project4-title{
+  .project3-title{
 	font-size:36px;
 	margin-top: 30px;
   }
   .project1-description,
   .project2-description,
-  .project3-description,
-  .project4-description{
+  .project3-description{
 	font-size:16px;
   }
   .learning-container{
