@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://personalwebsite-bice-psi.vercel.app/sitemap.xml
+Sitemap: https://marcootero.vercel.app/sitemap.xml
