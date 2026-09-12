@@ -14,7 +14,7 @@ window.addEventListener("scroll", () => {
   }
 });*/
 
-const sections = document.querySelectorAll('.project1-container, .project2-container,.project3-container');
+const sections = document.querySelectorAll('.project1-container, .project2-container,.project3-container, .project4-container');
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
