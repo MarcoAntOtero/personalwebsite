@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://marco-otero-portfolio.s3-website.us-east-2.amazonaws.com/sitemap.xml
+Sitemap: https://personalwebsite-bice-psi.vercel.app/sitemap.xml
